@@ -1,4 +1,6 @@
 let drums = document.querySelectorAll(".drum");
+
+//Sounds object
 let sounds = {
   crash: new Audio("sounds/crash.mp3"),
   kick: new Audio("sounds/kick-bass.mp3"),
@@ -9,32 +11,41 @@ let sounds = {
   tom4: new Audio("sounds/tom-4.mp3")
 };
 
+//Stop sound then restart sound if pressed multiple times
+function stopThenPlay(obj) {
+  obj.pause();
+  obj.currentTime = 0;
+  obj.play();
+}
+
+//Switch for multiple keys and clicks
 function switching(switchVar) {
   switch(switchVar) {
     case "w":
-      sounds.crash.play();
+      stopThenPlay(sounds.crash);
       break;
     case "a":
-      sounds.kick.play();
+      stopThenPlay(sounds.kick);
       break;
     case "s":
-      sounds.snare.play();
+      stopThenPlay(sounds.snare);
       break;
     case "d":
-      sounds.tom1.play();
+      stopThenPlay(sounds.tom1);
       break;
     case "j":
-      sounds.tom2.play();
+      stopThenPlay(sounds.tom2);
       break;
     case "k":
-      sounds.tom3.play();
+      stopThenPlay(sounds.tom3);
       break;
     case "l":
-      sounds.tom4.play();
+      stopThenPlay(sounds.tom4);
       break;
   }
 }
-  
+
+//Handle Clicks
 drums.forEach(function(drum) {
   drum.addEventListener("click", function(e) {
     let keyLetter = e.target.innerText;
@@ -43,6 +54,7 @@ drums.forEach(function(drum) {
   });
 });
 
+//Handle Keypress
 document.addEventListener("keypress", function(e) {
   let keyCode = String.fromCharCode(e.keyCode);
   console.log(keyCode);
