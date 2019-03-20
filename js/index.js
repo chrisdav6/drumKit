@@ -21,16 +21,16 @@ function stopThenPlay(obj) {
 //Switch for multiple keys and clicks
 function switching(switchVar) {
   switch(switchVar) {
-    case "w":
+    case "a":
       stopThenPlay(sounds.crash);
       break;
-    case "a":
+    case "s":
       stopThenPlay(sounds.kick);
       break;
-    case "s":
+    case "d":
       stopThenPlay(sounds.snare);
       break;
-    case "d":
+    case "h":
       stopThenPlay(sounds.tom1);
       break;
     case "j":
