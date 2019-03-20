@@ -60,7 +60,17 @@ drums.forEach(function(drum) {
 
 //Handle Keypress
 document.addEventListener("keydown", function(e) {
-  let keyCode = String.fromCharCode(e.keyCode).toLowerCase();
+  let keyCode = String.fromCharCode(e.which).toLowerCase();
   console.log(keyCode);
   switching(keyCode);
+
+  //animate drum when key is pressed like a hover event
+  drums.forEach(function(drum) {
+    if(keyCode == drum.innerText) {
+      drum.classList.add("red");
+      setTimeout(() => {
+        drum.classList.remove("red");
+      }, 1);
+    }
+  });
 });
