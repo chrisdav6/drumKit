@@ -55,6 +55,12 @@ drums.forEach(function(drum) {
     // let keyLetter = e.target.classList[0]; Another way to select by class "w"
     console.log(keyLetter);
     switching(keyLetter);
+
+    //flash drum letter on press
+    drum.classList.add("red");
+    setTimeout(() => {
+      drum.classList.remove("red");
+    }, 200);
   });
 });
 
@@ -64,13 +70,13 @@ document.addEventListener("keydown", function(e) {
   console.log(keyCode);
   switching(keyCode);
 
-  //animate drum when key is pressed like a hover event
+  //flash drum letter on keydown
   drums.forEach(function(drum) {
     if(keyCode == drum.innerText) {
       drum.classList.add("red");
       setTimeout(() => {
         drum.classList.remove("red");
-      }, 1);
+      }, 200);
     }
   });
 });
