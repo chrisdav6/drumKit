@@ -1,4 +1,4 @@
-let drums = document.querySelectorAll("button");
+let drums = document.querySelectorAll(".drum");
 let sounds = {
   crash: new Audio("sounds/crash.mp3"),
   kick: new Audio("sounds/kick-bass.mp3"),
