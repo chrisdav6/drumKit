@@ -49,6 +49,7 @@ function switching(switchVar) {
 drums.forEach(function(drum) {
   drum.addEventListener("click", function(e) {
     let keyLetter = e.target.innerText;
+    // let keyLetter = e.target.classList[0]; Another way to select by class "w"
     console.log(keyLetter);
     switching(keyLetter);
   });
