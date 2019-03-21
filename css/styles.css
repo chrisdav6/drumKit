@@ -58,11 +58,6 @@ footer {
   opacity: 0.8;
 }
 
-.pressed {
-  box-shadow: 0 3px 4px 0 #DBEDF3;
-  opacity: 0.5;
-}
-
 .drum {
   outline: none;
   border: 10px solid #404B69;
@@ -81,10 +76,12 @@ footer {
   transition: transform .3s;
 }
 
-.drum:hover {
-  transform: scale(1.1);
+.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+  color: red;
 }
 
-.red {
-  color: red;
+.drum:hover {
+  transform: scale(1.1);
 }

@@ -51,31 +51,34 @@ function switching(switchVar) {
 //Handle Clicks
 drums.forEach(function(drum) {
   drum.addEventListener("mousedown", function(e) {
+    //Get letter on drum clicked
     let keyLetter = e.target.innerText;
-    // let keyLetter = e.target.classList[0]; Another way to select by class "w"
+    //View letter in console
     console.log(keyLetter);
+    //Assign sound to clicked letter
     switching(keyLetter);
-
-    //flash drum letter on press
-    drum.classList.add("red");
+    //flash drum letter on click
+    drum.classList.add("pressed");
     setTimeout(() => {
-      drum.classList.remove("red");
+      drum.classList.remove("pressed");
     }, 200);
   });
 });
 
 //Handle Keypress
 document.addEventListener("keydown", function(e) {
+  //Get letter from keydown
   let keyCode = String.fromCharCode(e.which).toLowerCase();
+  //View letter in console
   console.log(keyCode);
+  //Assign sound to pressed letter
   switching(keyCode);
-
   //flash drum letter on keydown
   drums.forEach(function(drum) {
     if(keyCode == drum.innerText) {
-      drum.classList.add("red");
+      drum.classList.add("pressed");
       setTimeout(() => {
-        drum.classList.remove("red");
+        drum.classList.remove("pressed");
       }, 200);
     }
   });
